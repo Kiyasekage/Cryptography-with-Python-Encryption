@@ -1,14 +1,15 @@
 import string
-def al(p_ans):
-    v = string.ascii_uppercase
-    contain = []
-    if p_ans=="lowercase":
-        v = string.ascii_lowercase
-    for strings in v:
-        contain.append(strings)
-    return contain
+
+def shifting(p_shift,p_mess):
+    alphabet = string.ascii_uppercase
+    v = alphabet[p_shift-1:]+alphabet[0:p_shift-1]
+    store = []
+    for strings in p_mess:
+        store.append(alphabet.index(strings))
 print("Welcome to encrypting and decrypting your words/sentences")
 name = input("What's your name? ")
 ans = input("Do you want your input to be in lowercase or uppercase? ").lower()
-alphabet = al(ans)
-print(alphabet)
+message = input("Enter your message : ").upper()
+shift = int(input("Enter your shift : "))
+result = shifting(shift,message)
+print(result)
