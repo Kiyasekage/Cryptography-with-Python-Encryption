@@ -25,7 +25,7 @@ shift = int(input("Enter your shift : "))
 result = shifting(shift,message)
 result = "".join(result)
 if ans=='lowercase':
-    print("Your encrypted word is",result.lower())
+    print(f"{name}, your encrypted word is",result.lower())
 if ans=='uppercase':
-     print("Your encrypted word is",result)
+     print(f"{name}, your encrypted word is",result)
     
