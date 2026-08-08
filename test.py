@@ -6,9 +6,16 @@ def shifting(p_shift,p_mess):
     store = []
     final = []
     for strings in p_mess:
-        store.append(alphabet.index(strings))
+        if strings in alphabet:
+            store.append(alphabet.index(strings))
+        else:
+            store.append(strings)
+            
     for digits in store:
-        final.append(v[digits])
+        if isinstance(digits, int):
+            final.append(v[digits])
+        else:
+            final.append(digits)
     return final
 print("Welcome to encrypting and decrypting your words/sentences")
 name = input("What's your name? ")
@@ -16,4 +23,9 @@ ans = input("Do you want your input to be in lowercase or uppercase? ").lower()
 message = input("Enter your message : ").upper()
 shift = int(input("Enter your shift : "))
 result = shifting(shift,message)
-print(result)
+result = "".join(result)
+if ans=='lowercase':
+    print("Your encrypted word is",result.lower())
+if ans=='uppercase':
+     print("Your encrypted word is",result)
+    
